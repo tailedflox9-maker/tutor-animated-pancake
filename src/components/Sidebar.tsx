@@ -297,7 +297,7 @@ export function Sidebar({
                   key={conversation.id}
                   onClick={() => onSelectConversation(conversation.id)}
                   className={`group relative flex items-center gap-2 ${isFolded ? 'justify-center p-2.5' : 'p-2'} rounded-lg cursor-pointer transition-colors ${activeView === 'chat' && currentConversationId === conversation.id
-                    ? 'bg-white/10 text-white shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)]'
+                    ? 'bg-white/10 text-white shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] scan-effect'
                     : 'hover:bg-white/5 text-[var(--color-text-primary)]'
                     }`}
                   title={conversation.title}
@@ -395,7 +395,7 @@ export function Sidebar({
                   key={note.id}
                   onClick={() => onSelectNote(note.id)}
                   className={`group p-2.5 rounded-lg cursor-pointer transition-colors ${activeView === 'note' && currentNoteId === note.id
-                    ? 'bg-[var(--color-accent-bg)] text-[var(--color-accent-text)]'
+                    ? 'bg-[var(--color-accent-bg)] text-[var(--color-accent-text)] scan-effect'
                     : 'hover:bg-[var(--color-card)] text-[var(--color-text-primary)]'
                     }`}
                 >
@@ -443,7 +443,7 @@ export function Sidebar({
                   key={flowchart.id}
                   onClick={() => onSelectFlowchart(flowchart.id)}
                   className={`group p-2.5 rounded-lg cursor-pointer transition-colors ${activeView === 'flowchart' && currentFlowchartId === flowchart.id
-                    ? 'bg-[var(--color-accent-bg)] text-[var(--color-accent-text)]'
+                    ? 'bg-[var(--color-accent-bg)] text-[var(--color-accent-text)] scan-effect'
                     : 'hover:bg-[var(--color-card)] text-[var(--color-text-primary)]'
                     }`}
                 >
