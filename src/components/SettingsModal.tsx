@@ -19,9 +19,9 @@ const apiInfo = {
 };
 
 const tutorModes = [
-  { id: 'unhinged', name: 'Unhinged', description: 'Chaotic, unpredictable, informal.', emoji: '🤪' },
+  { id: 'standard', name: 'Standard Tutor', description: 'Neutral, explains clearly, step-by-step.', emoji: '📘' },
+  { id: 'mentor', name: 'Friendly Mentor', description: 'Casual, motivating, makes analogies.', emoji: '🧑‍🏫' },
   { id: 'cosmic', name: 'Cosmic Nerd', description: 'Space obsessed, sci-fi analogies.', emoji: '🌌' },
-  { id: 'meteor', name: 'Meteor', description: 'Fast, impactful, high momentum.', emoji: '☄️' },
   { id: 'ayanokoji', name: 'Ayanokoji', description: 'Cold, calculating, efficient.', emoji: '😐' },
 ];
 
@@ -149,7 +149,7 @@ export function SettingsModal({ isOpen, onClose, settings, onSaveSettings }: Set
                 </h3>
                 <p className="text-xs text-[var(--color-text-secondary)] mb-3">
                   Current: <span className="font-semibold text-[var(--color-text-primary)]">
-                    {tutorModes.find(m => m.id === localSettings.selectedTutorMode)?.name || 'Unhinged'}
+                    {tutorModes.find(m => m.id === localSettings.selectedTutorMode)?.name || 'Standard Tutor'}
                   </span>
                 </p>
               </div>
