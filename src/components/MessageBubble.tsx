@@ -1,6 +1,9 @@
 import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Smile, Sparkles, Copy, Check, Edit2, RefreshCcw, Save, X, Bookmark, Download } from 'lucide-react';
@@ -333,7 +336,8 @@ export function MessageBubble({
         ) : (
           <div className={`prose prose-invert prose-base max-w-none leading-relaxed flex-1 ${isUser ? 'font-semibold' : 'font-normal'}`}>
             <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
+              remarkPlugins={[remarkGfm, remarkMath]}
+              rehypePlugins={[rehypeKatex]}
               components={markdownComponents}
             >
               {message.content}
