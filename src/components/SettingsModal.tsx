@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Settings, Key, Download, Upload, Shield, Database, Eye, EyeOff, HelpCircle, Trash2, BookUser } from 'lucide-react';
+import { X, Settings, Key, Download, Upload, Shield, Database, Eye, EyeOff, HelpCircle, Trash2, BookUser, BookOpen, GraduationCap, Rocket, Brain } from 'lucide-react';
 import { APISettings, TutorMode } from '../types';
 import { storageUtils } from '../utils/storage';
 
@@ -19,10 +19,10 @@ const apiInfo = {
 };
 
 const tutorModes = [
-  { id: 'standard', name: 'Standard Tutor', description: 'Neutral, explains clearly, step-by-step.', emoji: '📘' },
-  { id: 'mentor', name: 'Friendly Mentor', description: 'Casual, motivating, makes analogies.', emoji: '🧑‍🏫' },
-  { id: 'cosmic', name: 'Cosmic Nerd', description: 'Space obsessed, sci-fi analogies.', emoji: '🌌' },
-  { id: 'ayanokoji', name: 'Ayanokoji', description: 'Cold, calculating, efficient.', emoji: '😐' },
+  { id: 'standard', name: 'Standard Tutor', description: 'Neutral, explains clearly, step-by-step.', icon: BookOpen },
+  { id: 'mentor', name: 'Friendly Mentor', description: 'Casual, motivating, makes analogies.', icon: GraduationCap },
+  { id: 'cosmic', name: 'Cosmic Nerd', description: 'Space obsessed, sci-fi analogies.', icon: Rocket },
+  { id: 'ayanokoji', name: 'Ayanokoji', description: 'Cold, calculating, efficient.', icon: Brain },
 ];
 
 type ActiveTab = 'general' | 'keys' | 'data';
@@ -160,8 +160,11 @@ export function SettingsModal({ isOpen, onClose, settings, onSaveSettings }: Set
                     onClick={() => handleTutorModeChange(mode.id as TutorMode)}
                     className={`p-4 border rounded-lg text-left transition-all duration-200 ${localSettings.selectedTutorMode === mode.id ? 'bg-[var(--color-card)] border-blue-500 ring-2 ring-blue-500/50' : 'bg-transparent border-[var(--color-border)] hover:bg-[var(--color-card)] hover:border-gray-600'}`}
                   >
-                    <p className="text-lg">{mode.emoji} <span className="font-semibold">{mode.name}</span></p>
-                    <p className="text-sm text-[var(--color-text-secondary)] mt-1">{mode.description}</p>
+                    <div className="flex items-center gap-2 mb-1">
+                      <mode.icon className="w-5 h-5 text-[var(--color-accent-text)]" />
+                      <span className="font-semibold">{mode.name}</span>
+                    </div>
+                    <p className="text-sm text-[var(--color-text-secondary)]">{mode.description}</p>
                   </button>
                 ))}
               </div>
