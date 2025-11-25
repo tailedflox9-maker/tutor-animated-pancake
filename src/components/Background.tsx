@@ -10,6 +10,8 @@ interface ShootingStar {
 }
 
 export const Background: React.FC = () => {
+    const [stars, setStars] = useState<ShootingStar[]>([]);
+
     // Generate static star layers (memoized)
     const generateStars = (count: number) => {
         let value = '';
