@@ -19,10 +19,10 @@ const apiInfo = {
 };
 
 const tutorModes = [
-  { id: 'standard', name: 'Standard Tutor', description: 'Neutral, explains clearly, step-by-step.', emoji: '📘' },
-  { id: 'exam', name: 'Exam Coach', description: 'Focus on practice questions & quick answers.', emoji: '🎓' },
-  { id: 'mentor', name: 'Friendly Mentor', description: 'Casual, motivating, makes analogies.', emoji: '🧑‍🏫' },
-  { id: 'creative', name: 'Creative Guide', description: 'Helps with essays, storytelling, ideas.', emoji: '✍️' },
+  { id: 'unhinged', name: 'Unhinged', description: 'Chaotic, unpredictable, informal.', emoji: '🤪' },
+  { id: 'cosmic', name: 'Cosmic Nerd', description: 'Space obsessed, sci-fi analogies.', emoji: '🌌' },
+  { id: 'meteor', name: 'Meteor', description: 'Fast, impactful, high momentum.', emoji: '☄️' },
+  { id: 'ayanokoji', name: 'Ayanokoji', description: 'Cold, calculating, efficient.', emoji: '😐' },
 ];
 
 type ActiveTab = 'general' | 'keys' | 'data';
@@ -149,7 +149,7 @@ export function SettingsModal({ isOpen, onClose, settings, onSaveSettings }: Set
                 </h3>
                 <p className="text-xs text-[var(--color-text-secondary)] mb-3">
                   Current: <span className="font-semibold text-[var(--color-text-primary)]">
-                    {tutorModes.find(m => m.id === localSettings.selectedTutorMode)?.name || 'Standard Tutor'}
+                    {tutorModes.find(m => m.id === localSettings.selectedTutorMode)?.name || 'Unhinged'}
                   </span>
                 </p>
               </div>
