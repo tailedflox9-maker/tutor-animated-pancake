@@ -172,7 +172,7 @@ function App() {
   useEffect(() => {
     setIsQuizModalOpen(false);
     setStudySession(null);
-    setModeSuggestion(null);
+    setStudySession(null);
   }, [currentConversationId]);
 
   // --- MEMOS ---
@@ -273,13 +273,7 @@ function App() {
       handleSelectConversation(conversationToUpdate.id);
 
       // ✨ Smart mode detection on first message of new conversation
-      const detection = detectBestMode(content);
-      if (shouldSuggestMode(detection, settings.selectedTutorMode)) {
-        setModeSuggestion({
-          mode: detection.suggestedMode,
-          show: true
-        });
-      }
+
     } else {
       // ✨ Smart mode detection on first message of existing empty conversation
       let titleToUse = existingConversation.title;
@@ -297,13 +291,7 @@ function App() {
           }
         );
 
-        const detection = detectBestMode(content);
-        if (shouldSuggestMode(detection, settings.selectedTutorMode)) {
-          setModeSuggestion({
-            mode: detection.suggestedMode,
-            show: true
-          });
-        }
+
       }
 
       conversationToUpdate = {
@@ -645,7 +633,7 @@ function App() {
 
     // Switch mode first
     handleTutorModeChange(newMode);
-    setModeSuggestion(null);
+    handleTutorModeChange(newMode);
 
     // Show notification
     showNotification(`Switched to ${modeNames[newMode]} mode! Regenerating response...`, 'success');
@@ -666,9 +654,7 @@ function App() {
     }
   };
 
-  const handleDismissModeSuggestion = () => {
-    setModeSuggestion(null);
-  };
+
 
   // --- OTHER HANDLERS ---
   const handleModelChange = (model: AIModel) => {
