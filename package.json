@@ -11,13 +11,16 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
+    "katex": "^0.16.9",
     "lucide-react": "^0.344.0",
     "marked": "^13.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-markdown": "^10.1.0",
     "react-syntax-highlighter": "^15.6.6",
-    "remark-gfm": "^4.0.1"
+    "rehype-katex": "^7.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
