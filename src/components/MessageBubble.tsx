@@ -287,17 +287,17 @@ export function MessageBubble({
 
   return (
     <div
-      className={`message-wrapper flex gap-3 sm:gap-4 ${isUser ? 'justify-end' : 'justify-start'} transition-all duration-200 ease-out will-change-transform`}
+      className={`message-wrapper flex gap-2 sm:gap-4 ${isUser ? 'justify-end' : 'justify-start'} transition-all duration-200 ease-out will-change-transform`}
     >
       {!isUser && (
-        <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center bg-[var(--color-card)] border border-white/10 shadow-[0_0_15px_rgba(59,130,246,0.2)] self-start">
-          <Sparkles className="w-4 h-4 text-blue-400" />
+        <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-[var(--color-card)] border border-white/10 shadow-[0_0_15px_rgba(59,130,246,0.2)] self-start mt-1">
+          <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
         </div>
       )}
 
-      <div className={`message-bubble relative group p-3 sm:p-4 rounded-xl min-h-[3rem] flex flex-col ${isUser ? 'nebula-gradient text-white shadow-lg' : 'glass-panel'}`}>
+      <div className={`message-bubble relative group p-2.5 sm:p-4 rounded-xl min-h-[2.5rem] flex flex-col ${isUser ? 'nebula-gradient text-white shadow-lg' : 'glass-panel'}`}>
         {!isUser && displayModel && (
-          <div className="text-xs text-[var(--color-text-secondary)] mb-2 font-medium tracking-wide">
+          <div className="text-[10px] sm:text-xs text-[var(--color-text-secondary)] mb-1 sm:mb-2 font-medium tracking-wide">
             {displayModel}
           </div>
         )}
@@ -334,7 +334,7 @@ export function MessageBubble({
             </p>
           </div>
         ) : (
-          <div className={`prose prose-invert prose-base max-w-none leading-relaxed flex-1 ${isUser ? 'font-semibold' : 'font-normal'}`}>
+          <div className={`prose prose-invert prose-sm sm:prose-base max-w-none leading-relaxed flex-1 ${isUser ? 'font-semibold' : 'font-normal'}`}>
             <ReactMarkdown
               remarkPlugins={[remarkGfm, remarkMath]}
               rehypePlugins={[rehypeKatex]}
