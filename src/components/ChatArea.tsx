@@ -64,15 +64,11 @@ export function ChatArea({
       <div className="chat-area">
         <div className="flex-1 flex flex-col items-center justify-center p-8">
           <div className="text-center max-w-2xl mx-auto space-y-8">
-            
-            {/* Logo */}
+
+            {/* Floating Astronaut */}
             <div className="flex justify-center">
-              <div className="w-24 h-24 bg-[var(--color-card)] rounded-2xl flex items-center justify-center p-5 border border-[var(--color-border)]">
-                <img
-                  src="/white-logo.png"
-                  alt="AI Tutor"
-                  className="w-full h-full object-contain opacity-90"
-                />
+              <div className="text-8xl animate-bounce-slow filter drop-shadow-[0_0_30px_rgba(59,130,246,0.5)]">
+                👨‍🚀
               </div>
             </div>
 
@@ -82,7 +78,7 @@ export function ChatArea({
                 Welcome to AI Tutor
               </h1>
               <p className="text-sm text-[var(--color-text-secondary)] max-w-md mx-auto">
-                Your intelligent learning companion powered by advanced AI
+                Ready to explore the universe of knowledge?
               </p>
             </div>
 
@@ -92,12 +88,12 @@ export function ChatArea({
                 <div className="text-2xl mb-2">🎓</div>
                 <div className="text-xs font-medium text-[var(--color-text-primary)]">Expert Tutor</div>
               </div>
-              
+
               <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg p-4 text-center hover:border-[var(--color-text-secondary)] transition-colors">
                 <div className="text-2xl mb-2">💡</div>
                 <div className="text-xs font-medium text-[var(--color-text-primary)]">Smart Quizzes</div>
               </div>
-              
+
               <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg p-4 text-center hover:border-[var(--color-text-secondary)] transition-colors">
                 <div className="text-2xl mb-2">📊</div>
                 <div className="text-xs font-medium text-[var(--color-text-primary)]">Flowcharts</div>
@@ -165,12 +161,10 @@ export function ChatArea({
             // State 2a: The selected conversation is empty.
             <div className="flex items-center justify-center h-full">
               <div className="text-center p-4">
-                 <div className="mb-4 flex justify-center">
-                  <img
-                    src="/white-logo.png"
-                    alt="AI Tutor Logo"
-                    className="w-20 h-20 sm:w-24 sm:h-24"
-                  />
+                <div className="mb-4 flex justify-center">
+                  <div className="text-6xl animate-bounce-slow mb-4">
+                    🚀
+                  </div>
                 </div>
                 <h2 className="text-4xl sm:text-5xl font-bold text-[var(--color-text-primary)] mb-3">
                   {conversation.title}
