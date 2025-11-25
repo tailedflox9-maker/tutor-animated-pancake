@@ -32,16 +32,16 @@ export const Background: React.FC = () => {
         for (let i = 0; i < count; i++) {
             const x = Math.random() * 100;
             const y = Math.random() * 100;
-            const size = Math.random() * 2 + 1;
-            const opacity = Math.random();
+            const size = Math.random() * 1.5 + 0.5; // Reduced size: 0.5px to 2px
+            const opacity = Math.random() * 0.8; // Slightly reduced max opacity
             value += `${x}vw ${y}vh 0 ${opacity}px #fff, `;
         }
         return value.slice(0, -2);
     };
 
-    const layer1 = useMemo(() => generateStars(100), []); // Close, big
-    const layer2 = useMemo(() => generateStars(200), []); // Mid
-    const layer3 = useMemo(() => generateStars(300), []); // Far, small
+    const layer1 = useMemo(() => generateStars(50), []); // Reduced count: 100 -> 50
+    const layer2 = useMemo(() => generateStars(100), []); // Reduced count: 200 -> 100
+    const layer3 = useMemo(() => generateStars(150), []); // Reduced count: 300 -> 150
 
     // Shooting stars logic
     const createStar = useCallback(() => {
