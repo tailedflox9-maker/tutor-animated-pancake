@@ -19,7 +19,7 @@ import { storageUtils } from './utils/storage';
 import { aiService } from './services/aiService';
 import { generateFlowchartFromConversation } from './services/flowchartGenerator';
 import { detectBestMode, shouldSuggestMode } from './services/modeDetection';
-import { ShootingStars } from './components/ShootingStars';
+import { Background } from './components/Background';
 
 type ActiveView = 'chat' | 'note' | 'flowchart';
 
