@@ -19,7 +19,7 @@ import { storageUtils } from './utils/storage';
 import { aiService } from './services/aiService';
 import { generateFlowchartFromConversation } from './services/flowchartGenerator';
 
-import { Background } from './components/Background';
+import { ShootingStars } from './components/ShootingStars';
 
 type ActiveView = 'chat' | 'note' | 'flowchart';
 
@@ -743,7 +743,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <Background />
+      <ShootingStars />
       {/* Notification */}
       {notification.show && (
         <Notification
