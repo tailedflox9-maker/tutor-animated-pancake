@@ -208,6 +208,7 @@ export function Sidebar({
           </div>
         </div>
         <button
+          onClick={onNewConversation}
           className={`w-full flex items-center ${isFolded ? 'justify-center' : 'justify-start'} gap-2 px-3 py-2 bg-[var(--color-accent-bg)] hover:bg-[var(--color-accent-bg-hover)] rounded-lg transition-colors text-[var(--color-accent-text)] shadow-sm font-semibold btn-shine`}
         >
           <Plus className="w-4 h-4" />
