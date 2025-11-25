@@ -161,7 +161,7 @@ export function Sidebar({
     }
   };
 
-  const sidebarClasses = `bg-[var(--color-sidebar)] flex flex-col h-full border-r border-[var(--color-border)] sidebar transition-all duration-300 ease-in-out fixed lg:static z-50 ${isSidebarOpen ? 'sidebar-open' : 'hidden lg:flex'} ${isFolded ? 'w-14' : 'w-64'}`;
+  const sidebarClasses = `glass-panel flex flex-col h-full border-r border-[var(--color-border)] sidebar transition-all duration-300 ease-in-out fixed lg:static z-50 ${isSidebarOpen ? 'sidebar-open' : 'hidden lg:flex'} ${isFolded ? 'w-14' : 'w-64'}`;
 
   return (
     <aside className={sidebarClasses}>
@@ -208,8 +208,7 @@ export function Sidebar({
           </div>
         </div>
         <button
-          onClick={onNewConversation}
-          className={`w-full flex items-center ${isFolded ? 'justify-center' : 'justify-start'} gap-2 px-3 py-2 bg-[var(--color-accent-bg)] hover:bg-[var(--color-accent-bg-hover)] rounded-lg transition-colors text-[var(--color-accent-text)] shadow-sm font-semibold`}
+          className={`w-full flex items-center ${isFolded ? 'justify-center' : 'justify-start'} gap-2 px-3 py-2 bg-[var(--color-accent-bg)] hover:bg-[var(--color-accent-bg-hover)] rounded-lg transition-colors text-[var(--color-accent-text)] shadow-sm font-semibold btn-shine`}
         >
           <Plus className="w-4 h-4" />
           {!isFolded && <span>New chat</span>}
@@ -297,8 +296,8 @@ export function Sidebar({
                   key={conversation.id}
                   onClick={() => onSelectConversation(conversation.id)}
                   className={`group relative flex items-center gap-2 ${isFolded ? 'justify-center p-2.5' : 'p-2'} rounded-lg cursor-pointer transition-colors ${activeView === 'chat' && currentConversationId === conversation.id
-                    ? 'bg-[var(--color-accent-bg)] text-[var(--color-accent-text)]'
-                    : 'hover:bg-[var(--color-card)] text-[var(--color-text-primary)]'
+                    ? 'bg-white/10 text-white shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)]'
+                    : 'hover:bg-white/5 text-[var(--color-text-primary)]'
                     }`}
                   title={conversation.title}
                 >
@@ -317,6 +316,11 @@ export function Sidebar({
                           <Pin className="w-2.5 h-2.5 absolute -top-1 -right-1 text-yellow-400" />
                         )}
                       </div>
+
+                      {/* Active Indicator */}
+                      {activeView === 'chat' && currentConversationId === conversation.id && (
+                        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-4 bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.8)] rounded-r-full" />
+                      )}
 
                       {editingId === conversation.id ? (
                         <input
