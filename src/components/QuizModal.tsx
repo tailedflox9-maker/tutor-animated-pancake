@@ -64,7 +64,7 @@ export function QuizModal({ isOpen, onClose, session }: QuizModalProps) {
     if (!session || session.questions.length === 0) return 0;
     return Math.round((score / session.questions.length) * 100);
   }, [score, session]);
-  
+
   // Set animation class when quiz is completed
   useEffect(() => {
     if (quizCompleted) {
@@ -114,7 +114,7 @@ export function QuizModal({ isOpen, onClose, session }: QuizModalProps) {
               } else if (isSelected && !isCorrectAnswer) {
                 buttonClass = 'bg-red-900/50 border-red-500/60 text-red-300';
               } else {
-                 buttonClass = 'bg-[var(--color-card)] border-transparent opacity-60';
+                buttonClass = 'bg-[var(--color-card)] border-transparent opacity-60';
               }
             }
             return (
@@ -165,7 +165,7 @@ export function QuizModal({ isOpen, onClose, session }: QuizModalProps) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/70 backdrop-blur-sm animate-fadeIn">
       <div
-        className="relative w-full max-w-2xl bg-[var(--color-sidebar)] border border-[var(--color-border)] rounded-2xl shadow-2xl flex flex-col animate-fade-in-up overflow-hidden max-h-[90vh] max-h-[90dvh]"
+        className="relative w-full max-w-2xl bg-[#0a0a0a] border border-[var(--color-border)] rounded-2xl shadow-2xl flex flex-col animate-fade-in-up overflow-hidden max-h-[90vh] max-h-[90dvh]"
         role="dialog"
         aria-modal="true"
         aria-labelledby="quiz-title"
