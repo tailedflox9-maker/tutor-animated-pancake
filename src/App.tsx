@@ -9,7 +9,7 @@ import { InstallPrompt } from './components/InstallPrompt';
 import { SettingsModal } from './components/SettingsModal';
 import { QuizModal } from './components/QuizModal';
 import { Notification } from './components/Notification';
-import { ModeSuggestionBanner } from './components/ModeSuggestionBanner';
+
 import { Conversation, Message, APISettings, Note, StudySession, Flowchart, TutorMode } from './types';
 import { generateId } from './utils/helpers';
 import { generateSmartTitle } from './services/titleGenerator';
@@ -18,7 +18,7 @@ import { Menu } from 'lucide-react';
 import { storageUtils } from './utils/storage';
 import { aiService } from './services/aiService';
 import { generateFlowchartFromConversation } from './services/flowchartGenerator';
-import { detectBestMode, shouldSuggestMode } from './services/modeDetection';
+
 import { Background } from './components/Background';
 
 type ActiveView = 'chat' | 'note' | 'flowchart';
@@ -60,11 +60,7 @@ function App() {
     type: 'success'
   });
 
-  // Mode suggestion state
-  const [modeSuggestion, setModeSuggestion] = useState<{
-    mode: TutorMode;
-    show: boolean;
-  } | null>(null);
+
 
   // Use AbortController for proper cancellation
   const abortControllerRef = useRef<AbortController | null>(null);
@@ -813,15 +809,7 @@ function App() {
         {activeView === 'chat' ? (
           <>
             {/* Mode suggestion banner */}
-            {modeSuggestion?.show && (
-              <div className="py-2">
-                <ModeSuggestionBanner
-                  suggestedMode={modeSuggestion.mode}
-                  onAccept={handleAcceptModeSuggestion}
-                  onDismiss={handleDismissModeSuggestion}
-                />
-              </div>
-            )}
+
 
             <ChatArea
               conversation={currentConversation}
