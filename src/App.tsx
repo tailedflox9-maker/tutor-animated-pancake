@@ -19,6 +19,7 @@ import { storageUtils } from './utils/storage';
 import { aiService } from './services/aiService';
 import { generateFlowchartFromConversation } from './services/flowchartGenerator';
 import { detectBestMode, shouldSuggestMode } from './services/modeDetection';
+import { ShootingStars } from './components/ShootingStars';
 
 type ActiveView = 'chat' | 'note' | 'flowchart';
 
@@ -110,40 +111,40 @@ function App() {
   }, [settings]);
 
   // Shooting star effect - triggers every 60 seconds
-  useEffect(() => {
-    const createShootingStar = () => {
-      const star = document.createElement('div');
-      star.className = 'shooting-star';
-
-      // Random starting position (top 20% of screen, random horizontal)
-      const startX = Math.random() * window.innerWidth;
-      const startY = Math.random() * (window.innerHeight * 0.2);
-
-      star.style.left = `${startX}px`;
-      star.style.top = `${startY}px`;
-
-      document.body.appendChild(star);
-
-      // Trigger animation
-      setTimeout(() => star.classList.add('active'), 10);
-
-      // Remove after animation completes
-      setTimeout(() => {
-        star.remove();
-      }, 1600);
-    };
-
-    // Create shooting star every 60 seconds
-    const interval = setInterval(createShootingStar, 60000);
-
-    // Create first one after 5 seconds
-    const initialTimeout = setTimeout(createShootingStar, 5000);
-
-    return () => {
-      clearInterval(interval);
-      clearTimeout(initialTimeout);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const createShootingStar = () => {
+  //     const star = document.createElement('div');
+  //     star.className = 'shooting-star';
+  //
+  //     // Random starting position (top 20% of screen, random horizontal)
+  //     const startX = Math.random() * window.innerWidth;
+  //     const startY = Math.random() * (window.innerHeight * 0.2);
+  //
+  //     star.style.left = `${startX}px`;
+  //     star.style.top = `${startY}px`;
+  //
+  //     document.body.appendChild(star);
+  //
+  //     // Trigger animation
+  //     setTimeout(() => star.classList.add('active'), 10);
+  //
+  //     // Remove after animation completes
+  //     setTimeout(() => {
+  //       star.remove();
+  //     }, 1600);
+  //   };
+  //
+  //   // Create shooting star every 60 seconds
+  //   const interval = setInterval(createShootingStar, 60000);
+  //
+  //   // Create first one after 5 seconds
+  //   const initialTimeout = setTimeout(createShootingStar, 5000);
+  //
+  //   return () => {
+  //     clearInterval(interval);
+  //     clearTimeout(initialTimeout);
+  //   };
+  // }, []);
 
   // Debounced save to prevent too frequent writes
   useEffect(() => {
@@ -760,6 +761,7 @@ function App() {
 
   return (
     <div className="app-container">
+      <ShootingStars />
       {/* Notification */}
       {notification.show && (
         <Notification
