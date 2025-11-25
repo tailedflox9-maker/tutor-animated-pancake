@@ -675,7 +675,7 @@ function App() {
   };
 
   // --- OTHER HANDLERS ---
-  const handleModelChange = (model: 'google' | 'zhipu' | 'mistral-small' | 'mistral-codestral') => {
+  const handleModelChange = (model: AIModel) => {
     const newSettings = { ...settings, selectedModel: model };
     setSettings(newSettings);
     storageUtils.saveSettings(newSettings);
@@ -803,11 +803,11 @@ function App() {
         {!sidebarOpen && (
           <button
             onClick={() => setSidebarOpen(true)}
-            className="mobile-menu-button interactive-button p-2.5 bg-[var(--color-card)] rounded-lg shadow-md hover:bg-[var(--color-border)] transition-colors lg:hidden"
+            className="fixed top-3 left-3 z-40 p-2 glass-panel rounded-full shadow-lg hover:bg-white/10 transition-all duration-300 lg:hidden btn-shine group"
             title="Open sidebar"
             aria-label="Open sidebar"
           >
-            <Menu className="w-6 h-6 text-[var(--color-text-secondary)]" />
+            <Menu className="w-5 h-5 text-white/80 group-hover:text-white transition-colors" />
           </button>
         )}
         {activeView === 'chat' ? (
