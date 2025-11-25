@@ -46,10 +46,10 @@ export const Background: React.FC = () => {
     }, []);
 
     useEffect(() => {
-        const initialTimeout = setTimeout(() => createStar(), 1000);
+        const initialTimeout = setTimeout(() => createStar(), 5000);
         const interval = setInterval(() => {
-            if (Math.random() > 0.7) createStar();
-        }, 2000);
+            createStar();
+        }, 60000);
 
         return () => {
             clearTimeout(initialTimeout);
