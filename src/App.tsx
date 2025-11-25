@@ -761,7 +761,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <ShootingStars />
+      <Background />
       {/* Notification */}
       {notification.show && (
         <Notification
