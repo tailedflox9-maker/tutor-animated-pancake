@@ -81,7 +81,7 @@ export function Sidebar({
     // --- The "Big 4" (Default View) ---
     { id: 'gemini-2.5-flash', icon: Sparkles, name: 'Gemini 2.5 Flash' },
     { id: 'mistral-small-latest', icon: Cloud, name: 'Mistral Small' },
-    { id: 'llama-3.3-70b-versatile', icon: Zap, name: 'Groq Llama 3.3' },
+    { id: 'llama-3.3-70b-versatile', icon: Zap, name: 'Llama 3.3' },
     { id: 'gpt-oss-120b', icon: Cpu, name: 'Cerebras 120B' },
 
     // --- The "More" list (Hidden by default) ---
@@ -90,10 +90,10 @@ export function Sidebar({
     { id: 'mistral-large-latest', icon: Cloud, name: 'Mistral Large' },
     { id: 'mistral-medium-latest', icon: Cloud, name: 'Mistral Medium' },
     { id: 'codestral-latest', icon: Terminal, name: 'Codestral' },
-    { id: 'openai/gpt-oss-20b', icon: Zap, name: 'Groq GPT 20B' },
-    { id: 'qwen-3-235b-a22b-instruct-2507', icon: Cpu, name: 'Cerebras Qwen 3' },
-    { id: 'zai-glm-4.6', icon: Cpu, name: 'Cerebras GLM 4.6' },
-    { id: 'glm-4.5-flash', icon: Brain, name: 'Zhipu GLM 4.5' },
+    { id: 'openai/gpt-oss-20b', icon: Zap, name: 'GPT 20B' },
+    { id: 'qwen-3-235b-a22b-instruct-2507', icon: Cpu, name: 'Qwen 3' },
+    { id: 'zai-glm-4.6', icon: Cpu, name: 'GLM 4.6' },
+    { id: 'glm-4.5-flash', icon: Brain, name: 'GLM 4.5' },
   ];
 
   // Logic to determine which models to render
