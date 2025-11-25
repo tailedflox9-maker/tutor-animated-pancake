@@ -17,14 +17,11 @@
 
   /* --- DARK THEME VARIABLES --- */
   :root {
-    /* Background Colors - Semi-transparent for starfield visibility */
+    /* Background Colors - Cosmic Glass */
     --color-bg: rgba(5, 5, 5, 0.6);
-    /* More transparent */
-    --color-sidebar: rgba(10, 10, 10, 0.5);
-    /* More transparent */
-    --color-card: rgba(31, 31, 31, 0.6);
-    /* More transparent */
-    --color-border: rgba(60, 60, 60, 0.5);
+    --color-sidebar: rgba(10, 10, 10, 0.4);
+    --color-card: rgba(20, 20, 20, 0.6);
+    --color-border: rgba(255, 255, 255, 0.1);
 
     /* Text Colors */
     --color-text-primary: #FFFFFF;
@@ -130,8 +127,8 @@
 
   /* --- Global Scrollbar Styling --- */
   ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
   }
 
   ::-webkit-scrollbar-track {
@@ -249,6 +246,40 @@
 
   .pulse-subtle {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* --- COSMIC GLASS UTILITIES --- */
+  .glass-panel {
+    @apply bg-black/40 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_0_rgba(0, 0, 0, 0.37)];
+  }
+
+  .nebula-gradient {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  }
+
+  .btn-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent);
+    transform: skewX(-25deg);
+    transition: 0.5s;
+  }
+
+  .btn-shine:hover::after {
+    left: 150%;
+    transition: 0.5s;
   }
 
   /* --- FIXED RESPONSIVE LAYOUT --- */
