@@ -1,7 +1,7 @@
-export type TutorMode = 'standard' | 'exam' | 'mentor' | 'creative';
+export type TutorMode = 'unhinged' | 'cosmic' | 'meteor' | 'ayanokoji';
 
 // Expanded Model IDs
-export type AIModel = 
+export type AIModel =
   // Google
   | 'gemini-2.5-pro'
   | 'gemini-2.5-flash'
