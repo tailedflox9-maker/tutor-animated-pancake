@@ -1,4 +1,4 @@
-export type TutorMode = 'unhinged' | 'cosmic' | 'meteor' | 'ayanokoji';
+export type TutorMode = 'standard' | 'mentor' | 'cosmic' | 'ayanokoji';
 
 // Expanded Model IDs
 export type AIModel =
