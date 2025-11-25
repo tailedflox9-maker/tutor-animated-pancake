@@ -120,7 +120,7 @@ export function SettingsModal({ isOpen, onClose, settings, onSaveSettings }: Set
         className="fixed inset-0 bg-black/50 backdrop-blur-sm"
         onClick={onClose}
       />
-      <div className="relative w-full max-w-lg bg-[#0a0a0a] border border-[var(--color-border)] rounded-lg shadow-2xl flex flex-col animate-fade-in-up">
+      <div className="relative w-full max-w-lg glass-panel rounded-lg flex flex-col animate-fade-in-up">
         {/* Header */}
         <div className="p-6 flex items-center justify-between border-b border-[var(--color-border)]">
           <div className="flex items-center gap-3">
@@ -227,7 +227,7 @@ export function SettingsModal({ isOpen, onClose, settings, onSaveSettings }: Set
           <button onClick={onClose} className="px-6 py-2 text-[var(--color-text-primary)] hover:bg-[var(--color-card)] rounded-lg transition-colors font-semibold">
             Cancel
           </button>
-          <button onClick={handleSave} className="px-6 py-2 bg-[var(--color-accent-bg)] text-[var(--color-accent-text)] rounded-lg hover:bg-[var(--color-accent-bg-hover)] transition-colors font-semibold">
+          <button onClick={handleSave} className="px-6 py-2 bg-[var(--color-accent-bg)] text-[var(--color-accent-text)] rounded-lg hover:bg-[var(--color-accent-bg-hover)] transition-colors font-semibold btn-shine">
             Save
           </button>
         </div>
