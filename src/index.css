@@ -18,9 +18,12 @@
   /* --- DARK THEME VARIABLES --- */
   :root {
     /* Background Colors - Semi-transparent for starfield visibility */
-    --color-bg: rgba(5, 5, 5, 0.6); /* More transparent */
-    --color-sidebar: rgba(10, 10, 10, 0.5); /* More transparent */
-    --color-card: rgba(31, 31, 31, 0.6); /* More transparent */
+    --color-bg: rgba(5, 5, 5, 0.6);
+    /* More transparent */
+    --color-sidebar: rgba(10, 10, 10, 0.5);
+    /* More transparent */
+    --color-card: rgba(31, 31, 31, 0.6);
+    /* More transparent */
     --color-border: rgba(60, 60, 60, 0.5);
 
     /* Text Colors */
@@ -842,11 +845,14 @@
       opacity: 1;
       width: 0;
     }
+
     70% {
       opacity: 1;
     }
+
     100% {
-      transform: rotate(315deg) translateX(-1000px);
+      transform: rotate(315deg) translateX(1000px);
+      /* Positive value to shoot forward/down-right */
       opacity: 0;
       width: 100px;
     }
@@ -858,9 +864,9 @@
     background: linear-gradient(-45deg, rgba(255, 255, 255, 1), rgba(0, 0, 255, 0));
     border-radius: 999px;
     filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
-    animation: shoot 3s linear forwards; /* Increased duration for visibility */
-    width: var(--size, 100px); /* Use variable or default */
-    z-index: 0; /* Behind content */
+    animation: shoot 3s linear forwards;
+    width: var(--size, 100px);
+    z-index: 0;
   }
 
   .shooting-star::before {
@@ -869,11 +875,13 @@
     top: 50%;
     transform: translateY(-50%);
     right: 0;
-    height: 4px; /* Thicker head */
+    height: 4px;
+    /* Thicker head */
     width: 4px;
     background: #fff;
     border-radius: 50%;
-    box-shadow: 0 0 10px #fff, 0 0 20px #fff; /* Glow */
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff;
+    /* Glow */
   }
 
   /* --- GLASSMORPHISM UTILITIES --- */
@@ -895,9 +903,11 @@
   /* --- COMPONENT TRANSPARENCY --- */
   /* Apply backdrop blur to sidebar and main components */
   aside {
-    backdrop-filter: blur(8px) saturate(180%); /* Reduced blur slightly */
+    backdrop-filter: blur(8px) saturate(180%);
+    /* Reduced blur slightly */
     -webkit-backdrop-filter: blur(8px) saturate(180%);
-    background-color: rgba(10, 10, 10, 0.4) !important; /* More transparent */
+    background-color: rgba(10, 10, 10, 0.4) !important;
+    /* More transparent */
   }
 
   /* Modal backdrop gets blur, but modal content stays solid */
@@ -909,7 +919,8 @@
   /* Chat input and message bubbles with enhanced transparency */
   .chat-input-form,
   .message-bubble {
-    background: rgba(31, 31, 31, 0.4) !important; /* More transparent */
+    background: rgba(31, 31, 31, 0.4) !important;
+    /* More transparent */
     backdrop-filter: blur(10px) saturate(180%);
     -webkit-backdrop-filter: blur(10px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
