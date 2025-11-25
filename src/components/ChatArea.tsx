@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useCallback, useMemo } from 'react';
 import { MessageBubble } from './MessageBubble';
 import { ChatInput } from './ChatInput';
 import { Conversation, Message } from '../types';
+import { Rocket, GraduationCap, Lightbulb, Network, FileText, MessageSquarePlus } from 'lucide-react';
 
 interface ChatAreaProps {
   conversation: Conversation | undefined;
@@ -67,8 +68,8 @@ export function ChatArea({
 
             {/* Floating Astronaut */}
             <div className="flex justify-center">
-              <div className="text-8xl animate-bounce-slow filter drop-shadow-[0_0_30px_rgba(59,130,246,0.5)]">
-                👨‍🚀
+              <div className="animate-bounce-slow filter drop-shadow-[0_0_30px_rgba(59,130,246,0.5)]">
+                <Rocket className="w-32 h-32 text-blue-500" />
               </div>
             </div>
 
@@ -84,23 +85,23 @@ export function ChatArea({
 
             {/* Features Grid */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 pt-4">
-              <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg p-4 text-center hover:border-[var(--color-text-secondary)] transition-colors">
-                <div className="text-2xl mb-2">🎓</div>
+              <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg p-4 text-center hover:border-[var(--color-text-secondary)] transition-colors flex flex-col items-center">
+                <GraduationCap className="w-8 h-8 mb-2 text-blue-400" />
                 <div className="text-xs font-medium text-[var(--color-text-primary)]">Expert Tutor</div>
               </div>
 
-              <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg p-4 text-center hover:border-[var(--color-text-secondary)] transition-colors">
-                <div className="text-2xl mb-2">💡</div>
+              <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg p-4 text-center hover:border-[var(--color-text-secondary)] transition-colors flex flex-col items-center">
+                <Lightbulb className="w-8 h-8 mb-2 text-yellow-400" />
                 <div className="text-xs font-medium text-[var(--color-text-primary)]">Smart Quizzes</div>
               </div>
 
-              <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg p-4 text-center hover:border-[var(--color-text-secondary)] transition-colors">
-                <div className="text-2xl mb-2">📊</div>
+              <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg p-4 text-center hover:border-[var(--color-text-secondary)] transition-colors flex flex-col items-center">
+                <Network className="w-8 h-8 mb-2 text-green-400" />
                 <div className="text-xs font-medium text-[var(--color-text-primary)]">Flowcharts</div>
               </div>
 
-              <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg p-4 text-center hover:border-[var(--color-text-secondary)] transition-colors">
-                <div className="text-2xl mb-2">📝</div>
+              <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg p-4 text-center hover:border-[var(--color-text-secondary)] transition-colors flex flex-col items-center">
+                <FileText className="w-8 h-8 mb-2 text-purple-400" />
                 <div className="text-xs font-medium text-[var(--color-text-primary)]">Smart Notes</div>
               </div>
             </div>
@@ -162,9 +163,7 @@ export function ChatArea({
             <div className="flex items-center justify-center h-full">
               <div className="text-center p-4">
                 <div className="mb-4 flex justify-center">
-                  <div className="text-6xl animate-bounce-slow mb-4">
-                    🚀
-                  </div>
+                  <MessageSquarePlus className="w-20 h-20 text-blue-500 animate-bounce-slow mb-4" />
                 </div>
                 <h2 className="text-4xl sm:text-5xl font-bold text-[var(--color-text-primary)] mb-3">
                   {conversation.title}
