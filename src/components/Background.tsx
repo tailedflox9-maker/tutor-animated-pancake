@@ -10,38 +10,22 @@ interface ShootingStar {
 }
 
 export const Background: React.FC = () => {
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-    const [stars, setStars] = useState<ShootingStar[]>([]);
-
-    // Track mouse movement for parallax
-    useEffect(() => {
-        const handleMouseMove = (e: MouseEvent) => {
-            setMousePos({
-                x: (e.clientX / window.innerWidth) * 2 - 1, // -1 to 1
-                y: (e.clientY / window.innerHeight) * 2 - 1  // -1 to 1
-            });
-        };
-
-        window.addEventListener('mousemove', handleMouseMove);
-        return () => window.removeEventListener('mousemove', handleMouseMove);
-    }, []);
-
     // Generate static star layers (memoized)
     const generateStars = (count: number) => {
         let value = '';
         for (let i = 0; i < count; i++) {
             const x = Math.random() * 100;
             const y = Math.random() * 100;
-            const size = Math.random() * 1.5 + 0.5; // Reduced size: 0.5px to 2px
-            const opacity = Math.random() * 0.8; // Slightly reduced max opacity
+            const size = Math.random() * 1.5 + 0.5;
+            const opacity = Math.random() * 0.8;
             value += `${x}vw ${y}vh 0 ${opacity}px #fff, `;
         }
         return value.slice(0, -2);
     };
 
-    const layer1 = useMemo(() => generateStars(50), []); // Reduced count: 100 -> 50
-    const layer2 = useMemo(() => generateStars(100), []); // Reduced count: 200 -> 100
-    const layer3 = useMemo(() => generateStars(150), []); // Reduced count: 300 -> 150
+    const layer1 = useMemo(() => generateStars(50), []);
+    const layer2 = useMemo(() => generateStars(100), []);
+    const layer3 = useMemo(() => generateStars(150), []);
 
     // Shooting stars logic
     const createStar = useCallback(() => {
@@ -81,36 +65,28 @@ export const Background: React.FC = () => {
                 }}
             />
 
-            {/* Parallax Star Layers */}
-            {/* Layer 3 (Far) - Moves least */}
+            {/* Static Star Layers */}
             <div
-                className="absolute inset-0 transition-transform duration-100 ease-out"
+                className="absolute inset-0"
                 style={{
                     boxShadow: layer3,
                     width: '1px', height: '1px',
-                    transform: `translate(${mousePos.x * -10}px, ${mousePos.y * -10}px)`,
                     opacity: 0.4
                 }}
             />
-
-            {/* Layer 2 (Mid) */}
             <div
-                className="absolute inset-0 transition-transform duration-100 ease-out"
+                className="absolute inset-0"
                 style={{
                     boxShadow: layer2,
                     width: '2px', height: '2px',
-                    transform: `translate(${mousePos.x * -20}px, ${mousePos.y * -20}px)`,
                     opacity: 0.6
                 }}
             />
-
-            {/* Layer 1 (Close) - Moves most */}
             <div
-                className="absolute inset-0 transition-transform duration-100 ease-out"
+                className="absolute inset-0"
                 style={{
                     boxShadow: layer1,
                     width: '2px', height: '2px',
-                    transform: `translate(${mousePos.x * -40}px, ${mousePos.y * -40}px)`,
                     opacity: 0.8
                 }}
             />
