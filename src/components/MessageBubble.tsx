@@ -295,9 +295,9 @@ export function MessageBubble({
         </div>
       )}
 
-      <div className={`message-bubble relative group p-2.5 sm:p-4 rounded-xl min-h-[2.5rem] flex flex-col ${isUser ? 'nebula-gradient text-white shadow-lg' : 'glass-panel'}`}>
+      <div className={`message-bubble relative group ${isUser ? 'p-2.5 sm:p-4 rounded-xl nebula-gradient text-white shadow-lg' : 'py-1 px-2'} min-h-[2.5rem] flex flex-col max-w-[85%] sm:max-w-[90%]`}>
         {!isUser && displayModel && (
-          <div className="text-[10px] sm:text-xs text-[var(--color-text-secondary)] mb-1 sm:mb-2 font-medium tracking-wide">
+          <div className="text-[10px] sm:text-xs text-[var(--color-text-secondary)] mb-1 font-medium tracking-wide opacity-70">
             {displayModel}
           </div>
         )}
@@ -334,7 +334,7 @@ export function MessageBubble({
             </p>
           </div>
         ) : (
-          <div className={`prose prose-invert prose-sm sm:prose-base max-w-none leading-relaxed flex-1 ${isUser ? 'font-semibold' : 'font-normal'}`}>
+          <div className={`prose prose-invert prose-sm sm:prose-base max-w-none leading-relaxed flex-1 ${isUser ? 'font-semibold' : 'font-medium text-[var(--color-text-primary)]'}`}>
             <ReactMarkdown
               remarkPlugins={[remarkGfm, remarkMath]}
               rehypePlugins={[rehypeKatex]}
@@ -347,7 +347,7 @@ export function MessageBubble({
         )}
 
         {!isEditing && !isStreaming && message.content.length > 0 && onEditMessage && (
-          <div className="absolute -bottom-2 -right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <div className={`absolute ${isUser ? '-bottom-2 -right-2' : '-bottom-8 left-0'} opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10`}>
             <ActionButtons
               isUser={isUser}
               onRegenerate={onRegenerateResponse ? handleRegenerate : undefined}
@@ -363,8 +363,8 @@ export function MessageBubble({
       </div>
 
       {isUser && (
-        <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center nebula-gradient shadow-lg self-start">
-          <Smile className="w-4 h-4 text-white" />
+        <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center bg-[var(--color-card)] border border-white/10 shadow-[0_0_15px_rgba(59,130,246,0.2)] self-start mt-1">
+          <Smile className="w-4 h-4 text-blue-400" />
         </div>
       )}
     </div>
